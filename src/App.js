@@ -5,6 +5,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 import { Footer } from './Footer';
 import { Header } from './Header';
+import { TasksScreen } from './Todo';
 
 /**
  * Main application component.
@@ -22,8 +23,7 @@ export default function App() {
         <Header />
 
         <View style={styles.content}>
-          <Text style={styles.text}></Text>
-          <Text style={styles.text}>Contenu principal ici.</Text>
+          <TasksScreen />
         </View>
 
         <Footer />
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: 'left',
     justifyContent: 'center',
   },
   text: {

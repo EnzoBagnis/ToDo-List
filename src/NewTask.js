@@ -10,8 +10,8 @@ export function PopUp({ visible, onClose }) {
         >
             <View style={styles.centeredView}>
                 <View style={styles.modalView}>
-                    <View style={styles.inputText}>
-                        <TextInput placeholder="Ajouter une tâche" placeholderTextColor="#2FF768" />
+                    <View style={styles.textPlaceHolder}>
+                        <TextInput style={styles.inputText} placeholder="Ajouter une tâche" placeholderTextColor="#2FF768"  />
                     </View>
                     <TouchableOpacity
                         style={styles.closeButton}
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
     },
-    inputText: {
+    textPlaceHolder: {
         width: '100%',
         height: 40,
         borderColor: '#2FF768',
@@ -87,5 +87,8 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
         color: '#2FF768',
         marginBottom: 15,
+    },
+    inputText: {
+        color: '#2FF768',
     }
 });

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { StyleSheet, View, TouchableOpacity } from 'react-native';
-import HouseIcon from '../assets/house-solid-full.svg';
-import PlusIcon from '../assets/plus-solid-full.svg';
-import UserIcon from '../assets/user-solid-full.svg';
+import HouseIcon from '../public/image/house-solid-full.svg';
+import PlusIcon from '../public/image/plus-solid-full.svg';
+import UserIcon from '../public/image/user-solid-full.svg';
 import { PopUp } from './NewTask';
 
 const styles = StyleSheet.create({
