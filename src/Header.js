@@ -1,4 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native';
+import { useTodo } from './context/TodoContext';
 
 /**
  * Header component for the application.
@@ -7,9 +8,16 @@ import { StyleSheet, Text, View } from 'react-native';
  * @returns {JSX.Element} The rendered header component.
  */
 export function Header() {
+    const { tasks } = useTodo();
+    const total = tasks.length;
+    const notFinished = tasks.filter(t => t.etat !== 'Réussi' && t.etat !== 'Abandonné').length;
+
     return (
         <View style={styles.header}>
-            <Text style={styles.title}>Header</Text>
+            <View style={styles.statsContainer}>
+                 <Text style={styles.statsText}>Total: {total}</Text>
+                 <Text style={styles.statsText}>À faire: {notFinished}</Text>
+            </View>
         </View>
     );
 }
@@ -18,16 +26,24 @@ const styles = StyleSheet.create({
     header: {
         width: '100%',
         height: 60,
-        backgroundColor: 'transparent', // Transparent to show gradient
+        backgroundColor: 'transparent',
         alignItems: 'center',
         justifyContent: 'center',
-        // borderBottomWidth: 1, // Removed border for cleaner look
-        // borderBottomColor: '#ddd',
         marginTop: 40,
     },
-    title: {
-        fontSize: 24, // Slightly larger
+    statsContainer: {
+        flexDirection: 'row',
+        gap: 20,
+        marginTop: 5,
+    },
+    statsText: {
+        color: '#2FF768',
+        fontSize: 16,
         fontWeight: 'bold',
-        color: '#2FF768', // Green color specified
+    },
+    title: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        color: '#2FF768',
     },
 });
